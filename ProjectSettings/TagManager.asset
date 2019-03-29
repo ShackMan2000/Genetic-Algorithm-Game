@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - knife
+  - wall
+  - customText
+  - goal
+  - checkpoint
+  - endgate
+  - light
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - mergedLight
+  - objects
+  - lightColor1
+  - lightColor2
+  - goal
+  - wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 3577260341
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: busters
+    uniqueID: 2981996775
+    locked: 0
+  - name: balls
+    uniqueID: 4046248599
+    locked: 0
+  - name: objects
+    uniqueID: 1149083689
+    locked: 0
+  - name: UI
+    uniqueID: 158403913
+    locked: 0
