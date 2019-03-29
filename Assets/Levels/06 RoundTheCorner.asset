@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f548771fe751f61429abf5fc7a2f88f7, type: 3}
+  m_Name: 06 RoundTheCorner
+  m_EditorClassIdentifier: 
+  levelID: 6
+  zoomLevel: 1.5
+  GatePositions:
+  - {x: -3.48, y: -2.22, z: 0}
+  - {x: -3.48, y: 4.22, z: 0}
+  gateRotations:
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: -90}
+  goalPosition: {x: -3.48, y: 1, z: 0}
+  gateColors: 0000000001000000
+  mergedColor: 5
+  scoreNeeded: 200
+  grid: {fileID: 1701314331982962, guid: 33bebea288b4ef547aea1d374f7b243b, type: 2}

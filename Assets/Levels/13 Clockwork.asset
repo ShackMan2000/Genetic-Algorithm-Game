@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f548771fe751f61429abf5fc7a2f88f7, type: 3}
+  m_Name: 13 Clockwork
+  m_EditorClassIdentifier: 
+  levelID: 13
+  zoomLevel: 1.5
+  GatePositions:
+  - {x: -10, y: 4, z: 0}
+  - {x: 8, y: -2, z: 0}
+  gateRotations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  goalPosition: {x: -4, y: 4, z: 0}
+  gateColors: 0000000002000000
+  mergedColor: 4
+  scoreNeeded: 400
+  grid: {fileID: 1796481901341918, guid: fcb0cd901b5712541b09237cbce0f660, type: 2}

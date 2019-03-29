@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f548771fe751f61429abf5fc7a2f88f7, type: 3}
+  m_Name: 99 Small Hard Wheel
+  m_EditorClassIdentifier: 
+  levelID: 16
+  zoomLevel: 1
+  GatePositions:
+  - {x: -7, y: 1, z: 0}
+  gateRotations:
+  - {x: 0, y: 0, z: 90}
+  goalPosition: {x: 6, y: 1, z: 0}
+  gateColors: 00000000
+  mergedColor: 0
+  moneyReward: 5
+  timeForMaxReward: 5
+  timeForMinReward: 5
+  scoreNeeded: 5
+  grid: {fileID: 1497145280325182, guid: 2eda7b369cef9774ca47e91c837c7780, type: 2}

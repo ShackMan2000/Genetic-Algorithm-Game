@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
+  m_Name: Clone Range
+  m_EditorClassIdentifier: 
+  currentValue: 32
+  minValue: 30
+  maxValue: 32
+  initialValue: 32
+  valueCap: 2
+  upgradeStep: -2
+  unitSymbol: '%'
+  showDecimal: 0
+  hasRange: 1
+  infoText: Clone the lights that got closest to the goal. A clone chance higher than
+    100 means they can clone multiple times, e.g. 250% means they will clone twice
+    with a 50% chance to clone three times.
+  basePrice: 300
+  costIncrease: 1.22
+  nextCost: 10
+  upgradesBought: 0
+  isMaxed: 0
+  unlockAtLevel: 0

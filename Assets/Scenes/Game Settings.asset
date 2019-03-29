@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61101d2731298f7439744678c882418a, type: 3}
+  m_Name: Game Settings
+  m_EditorClassIdentifier: 
+  moneyAtStart: 200
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0.07410216, b: 1, a: 1}
+  - {r: 1, g: 0.9874844, b: 0.06132078, a: 1}
+  - {r: 0, g: 1, b: 0.11299443, a: 1}
+  - {r: 0.9811321, g: 0.66596085, b: 0, a: 1}
+  - {r: 0.48097548, g: 0, b: 0.9529412, a: 1}
+  - {r: 0, g: 1, b: 0.9806142, a: 1}
+  burstFromGateTime: 1
+  rewards:
+  - 300
+  - 500
+  - 800
+  - 1200
+  - 1600
+  - 2000
+  - 2500
+  - 3200
+  - 4500
+  - 6000
+  - 8000
+  - 10000
+  - 12500
+  - 15000
+  - 18000
+  - 24000
+  - 30000
+  - 35000
+  - 40000
+  - 50000
+  launchDelay: 0.1

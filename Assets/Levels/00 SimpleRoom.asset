@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f548771fe751f61429abf5fc7a2f88f7, type: 3}
+  m_Name: 00 SimpleRoom
+  m_EditorClassIdentifier: 
+  levelID: 0
+  zoomLevel: 1
+  GatePositions:
+  - {x: 0, y: 2.6, z: 0}
+  gateRotations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  goalPosition: {x: 0, y: -1.52, z: 0}
+  gateColors: 01000000
+  mergedColor: 0
+  scoreNeeded: 100
+  grid: {fileID: 1921940971086926, guid: 2cdd72997088f8d4b9cc21b63dff2ed6, type: 2}

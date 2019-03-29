@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f548771fe751f61429abf5fc7a2f88f7, type: 3}
+  m_Name: 17 Frogger
+  m_EditorClassIdentifier: 
+  levelID: 17
+  zoomLevel: 2
+  GatePositions:
+  - {x: -13.5, y: -5, z: 0}
+  - {x: 12.5, y: -5, z: 0}
+  gateRotations:
+  - {x: 0, y: 0, z: 180}
+  - {x: 0, y: 0, z: 180}
+  goalPosition: {x: -0.5, y: 8, z: 0}
+  gateColors: 0100000002000000
+  mergedColor: 3
+  scoreNeeded: 500
+  grid: {fileID: 1946429005289990, guid: 98fe04de6b2eedc4b8cc161c86541c7b, type: 2}
