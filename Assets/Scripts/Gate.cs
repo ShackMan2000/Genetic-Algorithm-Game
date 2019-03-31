@@ -40,9 +40,10 @@ public class Gate : MonoBehaviour
         color = newColor;
 
         gateAnimator.SetColor(newColor);
+        checkPoint.gateID = gateId;
         checkPoint.FullColor = newColor;
 
-        checkPoint.gameObject.layer = (gateId == 0) ? 11 : 10;
+       checkPoint.gameObject.transform.tag = (gateId == 0) ? "0" : "1";
     }
 
 
@@ -63,7 +64,6 @@ public class Gate : MonoBehaviour
 
     public void PrepareNewRound()
     {
-        gateAnimator.ResetSpeed();
 
         List<Light> sortedLights = deadLights.OrderBy(o => o.distanceToGoal).ToList();
         deadLights = new List<Light>(sortedLights);
@@ -142,7 +142,7 @@ public class Gate : MonoBehaviour
         }
 
         gateAnimator.LaunchAnimation();
-        yield return new WaitForSeconds(GameManager.Instance.launchAnimationTime);
+        yield return new WaitForSeconds(GameManager.Instance.settings.launchDelay);
 
         GatesManager.Instance.GateReadyToLaunch();
     }

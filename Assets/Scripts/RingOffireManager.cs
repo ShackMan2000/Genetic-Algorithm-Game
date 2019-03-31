@@ -29,7 +29,7 @@ public class RingOffireManager : MonoBehaviour
 
     private void Start()
     {
-        loopDelay += GameManager.Instance.launchAnimationTime;
+        loopDelay += GameManager.Instance.settings.launchDelay;
 
         ringCollections = GetComponentsInChildren<RingOffireCollection>();
 

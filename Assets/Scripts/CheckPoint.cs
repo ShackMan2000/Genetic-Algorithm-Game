@@ -6,6 +6,8 @@ public class CheckPoint : MonoBehaviour
 {
 
     private Camera cam;
+    public int gateID;
+
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
 

@@ -32,7 +32,7 @@ public class GateAnimator : MonoBehaviour
 
     private void Start()
     {
-        launchAnimationTime = GameManager.Instance.launchAnimationTime;
+        launchAnimationTime = GameManager.Instance.settings.launchDelay;
 
         if (!startGate)
         {
@@ -59,6 +59,7 @@ public class GateAnimator : MonoBehaviour
 
     public void LaunchAnimation()
     {
+        speed = originalSpeed;
         launchAnimationCounter = 0;
         isAccelaerating = true;
     }
@@ -80,8 +81,8 @@ public class GateAnimator : MonoBehaviour
         }
         else if (isDecelerating)
         {
-            launchAnimationCounter += Time.deltaTime * 5;
-            speed -= 5 * Time.deltaTime * 5;
+            launchAnimationCounter += Time.deltaTime * 2;
+            speed -= 5 * Time.deltaTime * 2;
 
             if (launchAnimationCounter > launchAnimationTime)
             {
@@ -94,10 +95,7 @@ public class GateAnimator : MonoBehaviour
 
     }
 
-    public void ResetSpeed()
-    {
-        speed = originalSpeed;
-    }
+
 
 
     private void AnimateSwushes()

@@ -9,7 +9,7 @@ public class SaveData
 
     public float money, moneySpent;
     
-    public bool showTutorial;
+    public bool showTutorial1, showTutorial2;
 
     public int[] upgradesBought = new int[11];
 

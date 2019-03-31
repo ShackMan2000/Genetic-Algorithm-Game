@@ -31,6 +31,8 @@ public class Light : MonoBehaviour
 
     public Gate myGate;
 
+    private int myGateID;
+
     private CheckPoint myCheckPoint;
 
     public bool isMerged;
@@ -52,6 +54,7 @@ public class Light : MonoBehaviour
     public void ConnectToGate(Gate gate, CheckPoint checkpoint)
     {
         myGate = gate;
+        myGateID = myGate.gateId;
         transform.parent = myGate.transform;
         myCheckPoint = checkpoint;
         SetStartPositionAndRotation();
@@ -112,8 +115,10 @@ public class Light : MonoBehaviour
             Die();
 
         }
-        else if (collision.CompareTag("checkpoint"))
+        else if ((collision.CompareTag("0") && myGateID == 0) 
+            || (collision.CompareTag("1") && myGateID == 1))
         {
+           
 
             if (!reachedCheckpoint)
             {

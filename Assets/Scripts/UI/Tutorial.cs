@@ -9,7 +9,15 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField]
     private GameObject wClickStart, wRandomDirection, wTimeIsShort,
-                        wAllDeadSorting, wRepeatingPath, wModifiyIt;
+                        wAllDeadSorting, wRepeatingPath, wModifiyIt, wKillEarly;
+
+
+
+
+    [SerializeField]
+    private Button mutationBTN, menuBTN;
+
+
 
 
     private void OnEnable()
@@ -24,27 +32,43 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        if (SaveManager.Instance.saveData.showTutorial == false)
+        if (SaveManager.Instance.saveData.showTutorial1)
+        {
+            wClickStart.SetActive(true);
+            LockButtons();
+        }
+
+        else if (SaveManager.Instance.saveData.showTutorial2 && GameManager.Instance.currentLevel.levelID != 0) 
+        {
+            LockButtons();
+            wKillEarly.SetActive(true);
+        }
+        else
         {
             FindObjectOfType<ShowHidePanel>().HideBTNclicked();
-
             gameObject.SetActive(false);
+
         }
+
+
     }
 
 
     private void StartTutorial()
     {
         //triggered through event when Start Game is clicked
-        wClickStart.SetActive(false);
-        StartCoroutine(ShowRandom());
+        if (SaveManager.Instance.saveData.showTutorial1)
+        {
+            StartCoroutine(ShowRandom());
+            wClickStart.SetActive(false);
+
+        }
     }
 
 
     private IEnumerator ShowRandom()
     {
-        yield return new WaitForSeconds(1.0f + GameManager.Instance.settings.launchDelay);
-
+        yield return new WaitForSeconds(0.5f + GameManager.Instance.settings.launchDelay);
         wRandomDirection.SetActive(true);
         StartCoroutine(SlowDownTime());
 
@@ -62,10 +86,9 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator ShowTimeIsShort()
     {
-        wRandomDirection.SetActive(false);        
+        wRandomDirection.SetActive(false);
 
         yield return new WaitForSeconds(1.0f);
-
 
         wTimeIsShort.SetActive(true);
         StartCoroutine(SlowDownTime());
@@ -120,11 +143,48 @@ public class Tutorial : MonoBehaviour
 
 
 
-    public void Finishtutorial()
+    public void Finishtutorial1()
     {
+        wModifiyIt.SetActive(false);
         StartCoroutine(SpeedUpTime());
         FindObjectOfType<ShowHidePanel>().HideBTNclicked();
+        SaveManager.Instance.saveData.showTutorial1 = false;
+        UnlockButtons();
     }
+
+
+    private IEnumerator ShowKillEarly()
+    {
+        yield return new WaitForSeconds(0.5f + GameManager.Instance.settings.launchDelay);
+        wKillEarly.SetActive(true);
+        StartCoroutine(SlowDownTime());
+    }
+
+
+    public void Finishtutorial2()
+    {
+        wKillEarly.SetActive(false);
+        StartCoroutine(SpeedUpTime());
+        FindObjectOfType<ShowHidePanel>().HideBTNclicked();
+        SaveManager.Instance.saveData.showTutorial2 = false;
+        UnlockButtons();
+    }
+
+
+
+    private void LockButtons()
+    {
+        mutationBTN.interactable = false;
+        menuBTN.interactable = false;
+    }
+
+    private void UnlockButtons()
+    {
+        mutationBTN.interactable = true;
+        menuBTN.interactable = true;
+    }
+
+
 
 
 
@@ -133,13 +193,12 @@ public class Tutorial : MonoBehaviour
         float t = 1;
         while (t > 0)
         {
-            t -= (Time.deltaTime *3);
-            print(t);
+            t -= (Time.deltaTime * 5);
             if (t < 0.1)
             {
                 t = 0;
             }
-           Time.timeScale = t;
+            Time.timeScale = t;
 
             yield return null;
         }
@@ -148,9 +207,9 @@ public class Tutorial : MonoBehaviour
     private IEnumerator SpeedUpTime()
     {
         float t = 0.1f;
-        while (t <= 1)
+        while (t < 1)
         {
-            t += Time.deltaTime * 3;
+            t += Time.deltaTime * 5;
             Time.timeScale = t;
 
             if (t > 1)

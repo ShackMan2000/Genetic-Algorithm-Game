@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Mutate Direction
   m_EditorClassIdentifier: 
-  currentValue: 21
-  minValue: 19
+  currentValue: 20
+  minValue: 20
   maxValue: 21
   initialValue: 21
   valueCap: 1
@@ -20,11 +20,10 @@ MonoBehaviour:
   unitSymbol: '%'
   showDecimal: 0
   hasRange: 1
-  infoText: Every time the light changes direction, it will mutate the change from
-    the last run by this %.
+  infoText: When repeating it's path from the previous run, every distance before
+    turning turn will be mutated by this %.
   basePrice: 200
   costIncrease: 1.18
-  nextCost: 36
-  upgradesBought: 1
+  upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 0

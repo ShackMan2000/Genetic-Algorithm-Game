@@ -111,8 +111,10 @@ public class GatesManager : MonoBehaviour
 
         if (newRoundStarts != null)
             newRoundStarts();
-        //  EnemyManager.Instance.ActivateEnemies();
     }
+
+
+
 
     [ContextMenu("NewRound")]
     public void NewRound()

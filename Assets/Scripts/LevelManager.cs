@@ -17,8 +17,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject[] canvi;
     [SerializeField]
-    private LevelWonOverlay levelWonOverlay;
-
+    private LevelWonOverlay levelWonOverlay;   
 
     [SerializeField]
     private GameSettings settings;
@@ -86,6 +85,7 @@ public class LevelManager : MonoBehaviour
 
         colorCounts = new List<int> { 0, 0, 0 };
 
+
     }
 
 
@@ -97,6 +97,10 @@ public class LevelManager : MonoBehaviour
 
 
         currentLevel = GameManager.Instance.currentLevel;
+
+        if(currentLevel.levelID == 0)
+            killEarlyBTN.SetActive(false);
+
 
         Instantiate(currentLevel.grid);
 
@@ -247,6 +251,10 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator UnlockKillEmAllButton(float currentLifespan)
     {
+        if(currentLevel.levelID == 0)
+            yield return null;
+
+
         yield return new WaitForSeconds(lifeSpan.currentValue);
 
         if ((currentLifespan - (2 * lifeSpan.currentValue) > 0.1f))

@@ -42,4 +42,4 @@ MonoBehaviour:
   - 35000
   - 40000
   - 50000
-  launchDelay: 0.1
+  launchDelay: 1

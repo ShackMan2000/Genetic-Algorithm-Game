@@ -12,10 +12,7 @@ public class GameManager : MonoBehaviour
     
 
     public GameSettings settings;
-
-
-    public float launchAnimationTime;
-
+       
 
     [SerializeField]
     private SaveData saveData;
@@ -99,11 +96,15 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<UpgradeManager>().ResetAllstats();
 
-        SaveData.showTutorial = true;
+        SaveData.showTutorial1 = true;
+        SaveData.showTutorial2 = true;
         SaveData.moneySpent = 0;
         SaveData.money = settings.moneyAtStart;
         SaveData.levelsUnlocked = 0;
         SaveData.bestTimes = new float[20];
+
+        SceneManager.LoadScene("MenuScene");
+
 
         SaveManager.Instance.SaveGame();
     }
