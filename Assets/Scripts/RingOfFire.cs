@@ -19,6 +19,10 @@ public class RingOfFire : MonoBehaviour
 
     public float delayBeforeExplode;
 
+    private bool animationIsRunning;
+
+
+
 
     // Use this for initialization
     void Awake()
@@ -37,14 +41,16 @@ public class RingOfFire : MonoBehaviour
 
     public void StartAnimation()
     {
-        explodeAnimation = StartCoroutine(Explode());
+        if(!animationIsRunning)
+            explodeAnimation = StartCoroutine(Explode());
     }
 
     public void StopAnimation()
     {
         if (explodeAnimation != null)
-        {
+        {            
             StopCoroutine(explodeAnimation);
+            animationIsRunning = false;
         }
 
         transform.localScale = new Vector3(0.0f, 0.0f, 0f);
@@ -55,6 +61,7 @@ public class RingOfFire : MonoBehaviour
 
     private IEnumerator Explode()
     {
+        animationIsRunning = true;
         yield return new WaitForSeconds(delayBeforeExplode);
 
         col.enabled = true;
@@ -82,5 +89,6 @@ public class RingOfFire : MonoBehaviour
         }
         transform.localScale = new Vector3(0.0f, 0.0f, 1f);
         col.enabled = false;
+        animationIsRunning = false;
     }
 }

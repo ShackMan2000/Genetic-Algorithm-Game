@@ -16,8 +16,7 @@ MonoBehaviour:
   GatePositions:
   - {x: -5, y: 0, z: 0}
   gateRotations:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
   goalPosition: {x: 5, y: 3.47, z: 0}
   gateColors: 03000000
   mergedColor: 0

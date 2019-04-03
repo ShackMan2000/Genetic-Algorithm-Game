@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -213,6 +214,7 @@ public class LevelManager : MonoBehaviour
 
     private void LevelWon()
     {
+
         levelWon = true;
         timerRunning = false;
 
@@ -252,7 +254,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator UnlockKillEmAllButton(float currentLifespan)
     {
         if(currentLevel.levelID == 0)
-            yield return null;
+            yield break;
 
 
         yield return new WaitForSeconds(lifeSpan.currentValue);

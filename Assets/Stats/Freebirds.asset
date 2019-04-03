@@ -14,9 +14,9 @@ MonoBehaviour:
   currentValue: 10
   minValue: 10
   maxValue: 15
-  initialValue: 10
-  valueCap: 90
-  upgradeStep: 5
+  initialValue: 90
+  valueCap: 10
+  upgradeStep: -5
   unitSymbol: '%'
   showDecimal: 0
   hasRange: 1
@@ -24,7 +24,6 @@ MonoBehaviour:
     in the bottom right to activate.
   basePrice: 600
   costIncrease: 1.1
-  nextCost: 20
   upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 8

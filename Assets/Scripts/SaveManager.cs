@@ -31,10 +31,6 @@ public class SaveManager : MonoBehaviour
 
     public string filePath;
 
-    // public static Action SaveGameLoaded = delegate { };
-    //upgradeItem, levelBTN
-
-
 
 
 
@@ -53,39 +49,38 @@ public class SaveManager : MonoBehaviour
 
         filePath = Application.dataPath + Path.DirectorySeparatorChar + gameDataFileName;
 
-        //  SceneManager.sceneLoaded += OnSceneLoaded;
-
         saveData = new SaveData();
         LoadGame();
+
     }
 
 
 
-    ////loading and event call from awake finishes before other objects are instantiated, so call again here
-    //private void Start()
-    //{
-    //    SaveGameLoaded();
-    //}
-
-    //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-
-    //}
-
 
     public void LoadGame()
     {
+        if (!PlayerPrefs.HasKey("save"))
+            return;
 
         string dataAsJson;
-        dataAsJson = File.ReadAllText(filePath);
+
+        //dataAsJson = File.ReadAllText(filePath);
+
+
+        dataAsJson = PlayerPrefs.GetString("save");
+        dataAsJson = Base64Decode(dataAsJson);
+
+
+
         saveData = JsonUtility.FromJson<SaveData>(dataAsJson);
 
         for (int i = 0; i < stats.Length; i++)
         {
+            stats[i].ResetValues();
             stats[i].upgradesBought = saveData.upgradesBought[i];
+
             for (int u = 0; u < stats[i].upgradesBought; u++)
             {
-                stats[i].ResetValues();
                 stats[i].Upgrade(onGameLoaded: true);
 
             }
@@ -105,24 +100,34 @@ public class SaveManager : MonoBehaviour
 
         string dataAsJson = JsonUtility.ToJson(saveData);
 
+        PlayerPrefs.SetString("save", Base64Encode(dataAsJson));
 
-        using (StreamWriter writer = new StreamWriter(filePath))
-        {
-            writer.Write(dataAsJson);
 
-        }
+        //using (StreamWriter writer = new StreamWriter(filePath))
+        //{
+        //    writer.Write(dataAsJson);
+
+        //}
     }
 
 
-    //public void ResetAllUpgrades()
-    //{
-    //    saveData.money += saveData.moneySpent;
-    //    saveData.moneySpent = 0;
-    //    foreach (MutationStat stat in stats)
-    //    {
 
-    //    }
-    //}
+
+    public static string Base64Encode(string plainText)
+    {
+        var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+        return System.Convert.ToBase64String(plainTextBytes);
+    }
+
+
+    public static string Base64Decode(string base64EncodedData)
+    {
+        var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+        return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+    }
+
+
+
 
 
     [ContextMenu("CreateSaveFile")]

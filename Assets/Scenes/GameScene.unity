@@ -3537,11 +3537,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -12631,11 +12631,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1328402873393714, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_Name
@@ -25170,7 +25170,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &320837603
 MonoBehaviour:
@@ -39148,11 +39148,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1328402873393714, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_Name
@@ -40500,7 +40500,7 @@ MonoBehaviour:
   checkpointsFreezeTime: []
   step: 0
   moveSpeed: 5
-  rotationSpeed: -100
+  rotationSpeed: -50
   moving: 0
   freezeTimer: 0
   startPosition: {x: 7.95, y: -1.01, z: 0}
@@ -45412,7 +45412,7 @@ MonoBehaviour:
   showBTNSprite: {fileID: 21300000, guid: 64030c023a8ac8a4faeb2a18cb9b5a1e, type: 3}
   hidden: 0
   moving: 0
-  openPosition: {x: 234, y: 0}
+  openPosition: {x: 270, y: 0}
   hideBTNImage: {fileID: 979303727}
   speed: 500
   mutationPanel: 1
@@ -53764,7 +53764,7 @@ MonoBehaviour:
   checkpointsFreezeTime: []
   step: 0
   moveSpeed: 5
-  rotationSpeed: 50
+  rotationSpeed: 40
   moving: 0
   freezeTimer: 0
   startPosition: {x: 7.95, y: -1.01, z: 0}
@@ -70462,11 +70462,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.28
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -76453,11 +76453,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.16
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.03
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -87097,11 +87097,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4684671028936580, guid: 32d9c7b07b1fc33458d157e82e8eac88, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.3
+      value: 10.41
       objectReference: {fileID: 0}
     - target: {fileID: 4684671028936580, guid: 32d9c7b07b1fc33458d157e82e8eac88, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 5.84
       objectReference: {fileID: 0}
     - target: {fileID: 4684671028936580, guid: 32d9c7b07b1fc33458d157e82e8eac88, type: 2}
       propertyPath: m_LocalPosition.z
@@ -92989,7 +92989,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &1796514597
 MonoBehaviour:
@@ -103174,7 +103174,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &1990066577
 MonoBehaviour:
@@ -104898,11 +104898,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4252399450024086, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1328402873393714, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
       propertyPath: m_Name

@@ -71,6 +71,7 @@ public class MutationStat : ScriptableObject
 
     public void Upgrade(bool onGameLoaded = false)
     {
+
         //using optional parameter to loop through when loading game
         if (!onGameLoaded)
         {

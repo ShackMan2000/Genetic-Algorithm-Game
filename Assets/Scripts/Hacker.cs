@@ -14,18 +14,12 @@ public class Hacker : MonoBehaviour
 
 
     public static Hacker Instance
-
     {
-
         get
-
         {
             if (instance == null)
-
             {
-
                 instance = FindObjectOfType<Hacker>();
-
             }
 
             return instance;
@@ -88,7 +82,6 @@ public class Hacker : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            PlayerPrefs.DeleteAll();
 
         }
      
@@ -99,6 +92,15 @@ public class Hacker : MonoBehaviour
         }
 
     }
+
+
+    [ContextMenu("ClearPlayerPrefs")]
+    void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+
 
     [ContextMenu("Unlock All Levels")]
     public void UnlockAllLevels()

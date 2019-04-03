@@ -11,6 +11,8 @@ TagManager:
   - checkpoint
   - endgate
   - light
+  - 0
+  - 1
   layers:
   - Default
   - TransparentFX

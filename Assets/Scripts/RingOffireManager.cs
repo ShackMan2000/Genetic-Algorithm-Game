@@ -71,6 +71,7 @@ public class RingOffireManager : MonoBehaviour
     {
         while (true)
         {
+            print("start Them All");
             for (int i = 0; i < allChildRings.Length; i++)
             {
                 allChildRings[i].StartAnimation();
@@ -81,8 +82,13 @@ public class RingOffireManager : MonoBehaviour
 
     public void StopRingLoop()
     {
+
         if (ringLoop != null)
+        {
             StopCoroutine(ringLoop);
+        print("stop routine");
+
+        }
 
         for (int i = 0; i < allChildRings.Length; i++)
         {
