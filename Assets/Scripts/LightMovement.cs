@@ -57,7 +57,7 @@ public class LightMovement : MonoBehaviour
         //for initial burst
         rigidBody.velocity = transform.up * speed;
         // /5 so that 1 light moves one lenght of it's own per unit
-        yield return new WaitForSeconds((settings.burstFromGateTime/5) / speed);
+        yield return new WaitForSecondsRealtime((settings.burstFromGateTime/5) / speed);
 
 
         while (true)
@@ -81,7 +81,7 @@ public class LightMovement : MonoBehaviour
 
             currentStep++;
 
-            yield return new WaitForSeconds((moveTime/5f) / (speed));
+            yield return new WaitForSecondsRealtime((moveTime/5f) / (speed));
         }
     }
           

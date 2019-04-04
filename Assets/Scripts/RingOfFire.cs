@@ -54,7 +54,7 @@ public class RingOfFire : MonoBehaviour
         }
 
         transform.localScale = new Vector3(0.0f, 0.0f, 0f);
-        col.enabled = true;
+        col.enabled = false;
 
     }
 
@@ -62,7 +62,7 @@ public class RingOfFire : MonoBehaviour
     private IEnumerator Explode()
     {
         animationIsRunning = true;
-        yield return new WaitForSeconds(delayBeforeExplode);
+        yield return new WaitForSecondsRealtime(delayBeforeExplode);
 
         col.enabled = true;
         spriteRenderer.color = myColor;

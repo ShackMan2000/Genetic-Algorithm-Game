@@ -15,7 +15,7 @@ MonoBehaviour:
   minValue: 1
   maxValue: 1
   initialValue: 1
-  valueCap: 4
+  valueCap: 3
   upgradeStep: 0.2
   unitSymbol: 
   showDecimal: 1
@@ -24,5 +24,5 @@ MonoBehaviour:
   basePrice: 500
   costIncrease: 1.14
   upgradesBought: 15
-  isMaxed: 1
+  isMaxed: 0
   unlockAtLevel: 3

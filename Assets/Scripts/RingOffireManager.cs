@@ -71,12 +71,11 @@ public class RingOffireManager : MonoBehaviour
     {
         while (true)
         {
-            print("start Them All");
             for (int i = 0; i < allChildRings.Length; i++)
             {
                 allChildRings[i].StartAnimation();
             }
-            yield return new WaitForSeconds(repeatLooptime);
+            yield return new WaitForSecondsRealtime(repeatLooptime);
         }
     }
 
@@ -86,7 +85,6 @@ public class RingOffireManager : MonoBehaviour
         if (ringLoop != null)
         {
             StopCoroutine(ringLoop);
-        print("stop routine");
 
         }
 

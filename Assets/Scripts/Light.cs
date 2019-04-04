@@ -40,6 +40,8 @@ public class Light : MonoBehaviour
 
     private Color centerColor;
 
+    public bool hasBeenCloned;
+
 
     private void Awake()
     {
@@ -71,6 +73,7 @@ public class Light : MonoBehaviour
 
     public void PrepareToLaunch()
     {
+        hasBeenCloned = false;
         isMerged = false;
         reachedCheckpoint = false;
         collided = false;

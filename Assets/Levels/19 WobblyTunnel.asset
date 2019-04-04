@@ -19,7 +19,7 @@ MonoBehaviour:
   gateRotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  goalPosition: {x: 13, y: 1.5, z: 0}
+  goalPosition: {x: 14, y: 1.5, z: 0}
   gateColors: 0100000002000000
   mergedColor: 3
   scoreNeeded: 600

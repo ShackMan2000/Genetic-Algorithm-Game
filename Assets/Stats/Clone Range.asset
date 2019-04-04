@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Clone Range
   m_EditorClassIdentifier: 
-  currentValue: 32
-  minValue: 30
+  currentValue: 8.068453
+  minValue: 2
   maxValue: 32
   initialValue: 32
-  valueCap: 2
+  valueCap: 10
   upgradeStep: -2
   unitSymbol: '%'
   showDecimal: 0
@@ -25,7 +25,6 @@ MonoBehaviour:
     with a 50% chance to clone three times.
   basePrice: 300
   costIncrease: 1.22
-  nextCost: 10
-  upgradesBought: 0
+  upgradesBought: 14
   isMaxed: 0
   unlockAtLevel: 0

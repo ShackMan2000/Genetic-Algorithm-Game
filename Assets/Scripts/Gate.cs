@@ -28,6 +28,10 @@ public class Gate : MonoBehaviour
 
     private Color color;
 
+    public bool TESTPrintMe;
+
+    public float stamp1,stamp2, stamp3;
+
 
     private void Awake()
     {
@@ -43,7 +47,7 @@ public class Gate : MonoBehaviour
         checkPoint.gateID = gateId;
         checkPoint.FullColor = newColor;
 
-       checkPoint.gameObject.transform.tag = (gateId == 0) ? "0" : "1";
+        checkPoint.gameObject.transform.tag = (gateId == 0) ? "0" : "1";
     }
 
 
@@ -64,6 +68,8 @@ public class Gate : MonoBehaviour
 
     public void PrepareNewRound()
     {
+     //  print("Preparing Gate " + gateId +" at " + Time.time);
+        stamp1 = Time.time;
 
         List<Light> sortedLights = deadLights.OrderBy(o => o.distanceToGoal).ToList();
         deadLights = new List<Light>(sortedLights);
@@ -77,6 +83,8 @@ public class Gate : MonoBehaviour
 
         MutateLights();
 
+        StopCoroutine("PrepareToLaunch");
+
         StartCoroutine(PrepareToLaunch());
     }
 
@@ -85,7 +93,7 @@ public class Gate : MonoBehaviour
 
     private void ChooseLightsToClone()
     {
-        int lightsToCloneRange = Mathf.RoundToInt(deadLights.Count * cloneRange.currentValue/100f);
+        int lightsToCloneRange = Mathf.RoundToInt(deadLights.Count * cloneRange.currentValue / 100f);
 
         for (int i = 0; i < lightsToCloneRange; i++)
         {
@@ -94,6 +102,7 @@ public class Gate : MonoBehaviour
 
             Light originalLight = deadLights[0];
             activeLights.Add(originalLight);
+
             deadLights.RemoveAt(0);
 
             CloneLight(originalLight);
@@ -104,6 +113,8 @@ public class Gate : MonoBehaviour
 
     private void CloneLight(Light originalLight)
     {
+        originalLight.hasBeenCloned = true;
+
         float thisCloneChance = cloneChance.currentValue;
 
         while (thisCloneChance > 0f && deadLights.Count > 0)
@@ -115,7 +126,7 @@ public class Gate : MonoBehaviour
                 activeLights.Add(clone);
                 deadLights.Remove(clone);
             }
-            thisCloneChance-=100f;
+            thisCloneChance -= 100f;
         }
     }
 
@@ -125,13 +136,14 @@ public class Gate : MonoBehaviour
     {
         foreach (var light in activeLights)
         {
-            light.movement.MutatePath();
-        } 
+            if (!light.hasBeenCloned)
+                light.movement.MutatePath();
+        }
     }
 
 
 
-    IEnumerator PrepareToLaunch()
+    private IEnumerator PrepareToLaunch()
     {
         for (int i = 0; i < activeLights.Count; i++)
         {
@@ -141,8 +153,11 @@ public class Gate : MonoBehaviour
             launchingLight.SetColor(color);
         }
 
+
+
         gateAnimator.LaunchAnimation();
-        yield return new WaitForSeconds(GameManager.Instance.settings.launchDelay);
+        yield return new WaitForSecondsRealtime(GameManager.Instance.settings.launchDelay);
+      
 
         GatesManager.Instance.GateReadyToLaunch();
     }
@@ -151,9 +166,13 @@ public class Gate : MonoBehaviour
 
     public void LaunchLights()
     {
+
+
         allLightsDead = false;
 
         LevelManager.Instance.ChangeLightCount(gateId, activeLights.Count);
+        if(activeLights.Count > 160)
+            print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         for (int i = 0; i < activeLights.Count; i++)
         {

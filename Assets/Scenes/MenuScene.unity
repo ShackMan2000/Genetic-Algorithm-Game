@@ -918,7 +918,7 @@ Prefab:
         type: 2}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 7006c2c8a14f785439ce32a435873c41,
+      objectReference: {fileID: 11400000, guid: 4f034283315ac144b9d8efb6c6ca4eec,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fba9fa0ac765e94b808779179caa63e, type: 2}
@@ -2459,7 +2459,7 @@ Prefab:
         type: 2}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 6d7993bad9d9def42811672645aa4cbd,
+      objectReference: {fileID: 11400000, guid: 8af218c9ec0c4294fa48485dc71c7074,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fba9fa0ac765e94b808779179caa63e, type: 2}
@@ -5517,11 +5517,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: {fileID: 0}
   settings: {fileID: 11400000, guid: baf01d7d849b73f488be8512b687edc8, type: 2}
-  launchAnimationTime: 0
   saveData:
     money: 0
     moneySpent: 0
-    showTutorial: 0
+    showTutorial1: 0
+    showTutorial2: 0
     upgradesBought: 
     levelsUnlocked: 0
     bestTimes: []
@@ -5591,7 +5591,8 @@ MonoBehaviour:
   saveData:
     money: 0
     moneySpent: 0
-    showTutorial: 0
+    showTutorial1: 0
+    showTutorial2: 0
     upgradesBought: 
     levelsUnlocked: 1
     bestTimes:
@@ -6151,7 +6152,7 @@ Prefab:
         type: 2}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 4f034283315ac144b9d8efb6c6ca4eec,
+      objectReference: {fileID: 11400000, guid: 7006c2c8a14f785439ce32a435873c41,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fba9fa0ac765e94b808779179caa63e, type: 2}
@@ -7324,7 +7325,7 @@ Prefab:
         type: 2}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 8af218c9ec0c4294fa48485dc71c7074,
+      objectReference: {fileID: 11400000, guid: 6d7993bad9d9def42811672645aa4cbd,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fba9fa0ac765e94b808779179caa63e, type: 2}
@@ -8099,7 +8100,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1001 &1798797642
 Prefab:

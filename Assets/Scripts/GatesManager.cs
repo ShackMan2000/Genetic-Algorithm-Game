@@ -124,8 +124,6 @@ public class GatesManager : MonoBehaviour
         LevelManager.Instance.ChangeLightCount(-1, 0);
 
 
-        if (newRoundStarts != null)
-            newRoundStarts();
         // EnemyManager.Instance.ActivateEnemies();
 
         for (int i = 0; i < gates.Length; i++)
@@ -148,6 +146,10 @@ public class GatesManager : MonoBehaviour
 
     private void LaunchAllGates()
     {
+
+        if (newRoundStarts != null)
+            newRoundStarts();
+
 
         currentLifeSpan += lifeSpan.currentValue;
         lifeSpanCounter = currentLifeSpan;
@@ -193,6 +195,7 @@ public class GatesManager : MonoBehaviour
 
     public void AllLightsFromThisGateDead()
     {
+        //print("dead at : " + Time.time);
         bool allGatesReady = true;
 
         for (int i = 0; i < gates.Length; i++)

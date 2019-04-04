@@ -18,6 +18,8 @@ public class Saw : MonoBehaviour
 
     private float startDelay;
 
+    public bool TESTprint;
+    public float  TESTtimeStamp;
 
     public bool moving;
 
@@ -41,6 +43,12 @@ public class Saw : MonoBehaviour
     private void OnDisable()
     {
         GatesManager.newRoundStarts -= Restart;
+    }
+
+    public void PrintTime()
+    {
+        if(TESTprint)
+            print(TESTtimeStamp - Time.time);
     }
 
     private void Awake()
@@ -81,7 +89,7 @@ public class Saw : MonoBehaviour
     private void FixedUpdate()
     {
 
-        transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * rotationSpeed);
+        transform.Rotate(new Vector3(0, 0, 1) * Time.fixedDeltaTime * rotationSpeed);
 
         if (hasOwnPath)
         {
@@ -95,7 +103,7 @@ public class Saw : MonoBehaviour
     {
         if (moving)
         {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, checkpointsPath[step], moveSpeed * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, checkpointsPath[step], moveSpeed * Time.fixedDeltaTime);
             if (transform.localPosition == checkpointsPath[step])
             {
                 moving = false;
@@ -104,7 +112,7 @@ public class Saw : MonoBehaviour
         }
         else
         {
-            freezeTimer -= Time.deltaTime;
+            freezeTimer -= Time.fixedDeltaTime;
             if (freezeTimer <= 0)
             {
                 freezeTimer = 0;
@@ -127,6 +135,9 @@ public class Saw : MonoBehaviour
 
     public void Restart()
     {
+        if(TESTprint)
+            TESTtimeStamp = Time.time;
+
         StopAllCoroutines();
         step = 0;
 
@@ -135,10 +146,12 @@ public class Saw : MonoBehaviour
             transform.localPosition = startPosition;
             freezeTimer = startDelay + checkpointsFreezeTime[0];
         }
-
-
         transform.eulerAngles = startRotation;
     }
+
+
+
+
 
     private void CheckforController()
     {
