@@ -23,7 +23,6 @@ MonoBehaviour:
   infoText: Each run the lifespan of the lights increases by this number.
   basePrice: 400
   costIncrease: 1.1
-  nextCost: 55
   upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 1

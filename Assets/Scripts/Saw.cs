@@ -60,10 +60,9 @@ public class Saw : MonoBehaviour
 
         startPosition = transform.localPosition;
 
-        if (isBigWheelAxis)
-        {
-            startRotation = transform.eulerAngles;
+        if (isBigWheelAxis)        {
 
+            startRotation = transform.eulerAngles;
             Destroy(GetComponent<SpriteRenderer>());
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(GetComponent<Rigidbody2D>());
@@ -86,9 +85,9 @@ public class Saw : MonoBehaviour
     }
 
 
+
     private void FixedUpdate()
     {
-
         transform.Rotate(new Vector3(0, 0, 1) * Time.fixedDeltaTime * rotationSpeed);
 
         if (hasOwnPath)

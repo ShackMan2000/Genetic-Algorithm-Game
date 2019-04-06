@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114274664315586652}
   - component: {fileID: 58756805954142242}
   - component: {fileID: 114952615891156948}
-  - component: {fileID: 50474147721426810}
+  - component: {fileID: 50367038553459266}
   m_Layer: 12
   m_Name: Goal
   m_TagString: goal
@@ -933,25 +933,25 @@ Transform:
   m_Father: {fileID: 4529118707107282}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50474147721426810
+--- !u!50 &50367038553459266
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1004400283110372}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &58756805954142242
 CircleCollider2D:

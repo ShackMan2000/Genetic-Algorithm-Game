@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Speed
   m_EditorClassIdentifier: 
-  currentValue: 4.0000005
+  currentValue: 5
   minValue: 1
   maxValue: 1
   initialValue: 1
@@ -23,6 +23,6 @@ MonoBehaviour:
   infoText: speeeeeeed
   basePrice: 500
   costIncrease: 1.14
-  upgradesBought: 15
-  isMaxed: 0
+  upgradesBought: 10
+  isMaxed: 1
   unlockAtLevel: 3

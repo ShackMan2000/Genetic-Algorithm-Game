@@ -76,6 +76,11 @@ public class Gate : MonoBehaviour
 
         ChooseLightsToClone();
 
+        foreach (var light in deadLights)
+        {
+            light.SetColor(color);
+
+        }
 
         activeLights.AddRange(deadLights);
         deadLights.Clear();
@@ -122,7 +127,7 @@ public class Gate : MonoBehaviour
             if (thisCloneChance >= Random.Range(0f, 1f))
             {
                 Light clone = deadLights[deadLights.Count - 1];
-                clone.GetPathFromOriginal(originalLight);
+                clone.movement.OverridePath(originalLight.movement.GetPath());
                 activeLights.Add(clone);
                 deadLights.Remove(clone);
             }
@@ -150,7 +155,6 @@ public class Gate : MonoBehaviour
             Light launchingLight = activeLights[i];
 
             launchingLight.PrepareToLaunch();
-            launchingLight.SetColor(color);
         }
 
 
@@ -167,18 +171,17 @@ public class Gate : MonoBehaviour
     public void LaunchLights()
     {
 
-
         allLightsDead = false;
-
         LevelManager.Instance.ChangeLightCount(gateId, activeLights.Count);
-        if(activeLights.Count > 160)
-            print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         for (int i = 0; i < activeLights.Count; i++)
         {
 
             activeLights[i].movement.StartMoving();
         }
+
+
+      
     }
 
 
@@ -201,16 +204,15 @@ public class Gate : MonoBehaviour
 
         activeLights.Remove(deadLight);
         deadLights.Add(deadLight);
-        //  GatesManager.Instance.activeLightsTotal--;
 
         if (activeLights.Count == 0)
         {
             allLightsDead = true;
             GatesManager.Instance.AllLightsFromThisGateDead();
-
         }
-
     }
+
+
 
 
     public void FreeBirdBTNClicked()

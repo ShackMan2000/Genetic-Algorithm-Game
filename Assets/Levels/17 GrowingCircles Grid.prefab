@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4562177646410402}
   - component: {fileID: 2569400268348528192}
   m_Layer: 0
-  m_Name: 18 GrowingCircles Grid
+  m_Name: 17 GrowingCircles Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 2113883506396947102}
   - component: {fileID: 50212041893098836}
   - component: {fileID: 66639789176590956}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Walls
   m_TagString: wall
   m_Icon: {fileID: 0}

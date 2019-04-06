@@ -5,25 +5,26 @@ using UnityEngine;
 public class LightMovement : MonoBehaviour
 {
 
-    // 1 unit equals the length of 5 lights
+    // 1 unit equals the length of 4 lights
 
     [SerializeField]
-    private MutationStat speedStat, minDistance, maxDistance, mutateSecond, mutateDirection, incremental;
+    private MutationStat speedStat, moveRange, mutationRange, incremental;
 
-    private int currentStep;
+    private int step;
 
+    [SerializeField]
     private float speed;
 
+    private float diameter = 0.25f;
 
-    private Rigidbody2D rigidBody;
+    public bool moving;
 
-    public List<float> pathSeconds;
-    public List<Vector3> pathRotations;
+    [SerializeField]
+    private LayerMask wallLayer;
 
-    public Coroutine moveRoutine;
+    public List<Vector2> path;
 
-
-    public int lockedSteps = 0;
+    private Vector2 nextWayPoint;
 
     [SerializeField]
     private GameSettings settings;
@@ -31,81 +32,128 @@ public class LightMovement : MonoBehaviour
 
     void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
         speed = speedStat.currentValue + 0.3f;
-        
     }
-    
- 
 
 
     public void StartMoving()
     {
-        moveRoutine = StartCoroutine(Move());
-    }
-    public void StopMoving()
-    {
-        rigidBody.velocity = Vector3.zero;
+        step = -1;
+        SetNextWaypoint();
+        moving = true;
     }
 
 
-    private IEnumerator Move()
+
+    private void FixedUpdate()
     {
-        float moveTime;
-        currentStep = 0;
-
-        //for initial burst
-        rigidBody.velocity = transform.up * speed;
-        // /5 so that 1 light moves one lenght of it's own per unit
-        yield return new WaitForSecondsRealtime((settings.burstFromGateTime/5) / speed);
+        if (moving)
+            MoveToGoal();
+    }
 
 
-        while (true)
-        {          
-            if (currentStep < pathRotations.Count)
-            {
-                transform.eulerAngles = pathRotations[currentStep];
-                moveTime = pathSeconds[currentStep];
-            }
-            else
-            {
-                Vector3 nextRotation = new Vector3(0, 0, UnityEngine.Random.Range(0, 360));
-                transform.eulerAngles = nextRotation;
-                pathRotations.Add(nextRotation);
+    private void MoveToGoal()
+    {
+        transform.position = Vector2.MoveTowards((Vector2)transform.position, nextWayPoint, Time.fixedDeltaTime * speed);
 
-                moveTime = Random.Range(minDistance.currentValue, maxDistance.currentValue);
-                pathSeconds.Add(moveTime);
-            }
-
-            rigidBody.velocity = transform.up * speed;
-
-            currentStep++;
-
-            yield return new WaitForSecondsRealtime((moveTime/5f) / (speed));
+        if ((Vector2)transform.position == nextWayPoint)
+        {
+            SetNextWaypoint();
         }
     }
-          
+
+
+    private void SetNextWaypoint()
+    {
+        step++;
+
+        if (step < path.Count)
+        {
+            nextWayPoint = path[step];
+        }
+        else
+        {
+            nextWayPoint = CreateReachableWayPoint(transform.position, 1.05f, transform.position);
+            path.Add(nextWayPoint);
+        }
+    }
+
+
+
+    private Vector2 CreateReachableWayPoint(Vector2 origin, float range, Vector2 startPoint)
+    {
+        int loopCount = 1;
+        Vector2 nextReachableWaypoint = Vector2.zero;
+        bool foundMarker = false;
+
+        while (!foundMarker)
+        {
+            nextReachableWaypoint = Random.insideUnitCircle * range + origin;
+
+            if (!Physics2D.Linecast(startPoint, nextReachableWaypoint, wallLayer))
+                foundMarker = true;
+
+            loopCount++;
+            if (loopCount%10 == 0)
+            {
+                range += 0.05f;
+                if(loopCount == 200)
+                    print("hard to find a point from " + startPoint + " to " + origin);
+            }
+        }
+        if(loopCount > 200)
+            print(loopCount + " iterations to find " + nextReachableWaypoint);
+
+
+        return nextReachableWaypoint;
+    }
+    
+
+
+
+
+    public List<Vector2> GetPath()
+    {
+        return path;
+    }
+
+    public void OverridePath(List<Vector2> newPath)
+    {
+        path = new List<Vector2>(newPath);
+    }
+
 
 
     public void MutatePath()
-    {
+    {     
+        float rangeInCircleUnits = mutationRange.currentValue * diameter;
 
-        float secondsChange = mutateSecond.currentValue /100f;
-        float rotationChange = (mutateDirection.currentValue/100f) * 180f;
+        for (int i = 1; i < path.Count; i++)
+        {         
+            // var incrementalAdjuster = incremental.currentValue + (100 - incremental.currentValue) * ((float)i / path.Count);
+            // incrementalAdjuster /= 100f;
+            Vector2 mutatedWaypoint = CreateReachableWayPoint(path[i], rangeInCircleUnits, path[i - 1]);
+            if (mutatedWaypoint != Vector2.zero)
+            {
+                path[i] = mutatedWaypoint;
+            }
+            //else
+            //{
+            //    string f = gameObject.name;
+            //    print("replacing " + i + " aqs in "  + path[i-1] + " with " + lastGoodWaypoint + " " + f);
+            //    path[i - 1] = lastGoodWaypoint;
+            //    mutatedWaypoint = CreateReachableWayPoint(path[i], rangeInCircleUnits, path[i - 1]);
+            //    if (mutatedWaypoint != Vector2.zero)
+            //    {
+            //        //speed = 0;
+            //        //return;
+            //        if (Physics2D.Linecast(path[i-1], path[i], wallLayer))
+            //            print("bullshit");
+            //        path[i] = mutatedWaypoint;
+            //    }
+              
+            //}
 
-        for (int i = 0; i < pathRotations.Count; i++)
-        {
-            //incremental Modifier
-            var incrementalAdjuster = incremental.currentValue + (100 - incremental.currentValue) * ((float)i / pathRotations.Count);
-            //0.3 min to not make single dot in the beginning
-           //incrementalAdjuster = Mathf.Clamp(incrementalAdjuster, 0.3f, 1.0f);
-           incrementalAdjuster /= 100f;
-
-            pathRotations[i] = new Vector3(0, 0, pathRotations[i].z + Random.Range(-rotationChange * incrementalAdjuster, rotationChange * incrementalAdjuster));
-
-            pathSeconds[i] = pathSeconds[i] + Random.Range(-secondsChange * pathSeconds[i] * incrementalAdjuster, secondsChange * pathSeconds[i] * incrementalAdjuster);
-
-            pathSeconds[i] = Mathf.Clamp(pathSeconds[i], minDistance.currentValue, maxDistance.currentValue);
         }
     }
 
@@ -113,24 +161,7 @@ public class LightMovement : MonoBehaviour
 
     public void ChopOffRestPath()
     {
-        if (pathSeconds.Count > currentStep + 1)
-        {
-            for (int i = currentStep; i < pathSeconds.Count; i++)
-            {
-                pathSeconds.RemoveAt(i);
-                pathRotations.RemoveAt(i);
-            }
-        }
+        path.RemoveRange(step, path.Count - step);
     }
 
-
-
-    public void ClearPath()
-    {
-        if (pathRotations.Count > currentStep + 1)
-        {
-            pathRotations.RemoveRange(currentStep, pathRotations.Count - currentStep);
-            pathSeconds.RemoveRange(currentStep, pathSeconds.Count - currentStep);
-        }
-    }
 }

@@ -42,6 +42,7 @@ public class Light : MonoBehaviour
 
     public bool hasBeenCloned;
 
+    public static int TESTINT;
 
     private void Awake()
     {
@@ -50,6 +51,9 @@ public class Light : MonoBehaviour
         mergedColor = settings.colors[GameManager.Instance.currentLevel.mergedColor];
         
         goalPosition = GameManager.Instance.currentLevel.goalPosition;
+
+        gameObject.name = "light " + TESTINT.ToString();
+        TESTINT++;
     }
 
 
@@ -91,7 +95,7 @@ public class Light : MonoBehaviour
 
     public void ClearRemainingPath()
     {
-        movement.ClearPath();
+        movement.ChopOffRestPath();
     }
 
     public void FreeBird()
@@ -112,7 +116,7 @@ public class Light : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {    
         if (collision.CompareTag("knife"))
         {
             Die();
@@ -132,9 +136,11 @@ public class Light : MonoBehaviour
     }
 
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //only one of the colors needs to check 
+
         if (myGate.gateId == 1 && !isMerged)
         {
             if (collision.collider.CompareTag("light"))
@@ -170,8 +176,9 @@ public class Light : MonoBehaviour
             return;
 
         dead = true;
-        movement.StopMoving();
-        movement.ChopOffRestPath();
+        //only on violent death
+       // movement.ChopOffRestPath();
+        movement.moving = false;
 
         SetDistanceToGoal();
 
@@ -186,17 +193,7 @@ public class Light : MonoBehaviour
     }
 
 
-
-
-
-    public void GetPathFromOriginal(Light original)
-    {
-        movement.pathRotations = new List<Vector3>(original.movement.pathRotations);
-        movement.pathSeconds = new List<float>(original.movement.pathSeconds);
-        startPosition = original.startPosition;
-        startRotation = original.startRotation;
-    }
-
+          
 
     public void SetDistanceToGoal()
     {

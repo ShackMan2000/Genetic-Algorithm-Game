@@ -9,21 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
-  m_Name: Mutate Distance
+  m_Name: Move Range
   m_EditorClassIdentifier: 
-  currentValue: 20
-  minValue: 20
-  maxValue: 21
-  initialValue: 21
+  currentValue: 1.7000009
+  minValue: 1.7000009
+  maxValue: 3.1
+  initialValue: 3.1
   valueCap: 1
-  upgradeStep: -1
-  unitSymbol: '%'
-  showDecimal: 0
+  upgradeStep: -0.1
+  unitSymbol: ' '
+  showDecimal: 1
   hasRange: 1
-  infoText: When repeating it's path from the previous run, every direction turn will
-    be mutated by this %.
-  basePrice: 200
-  costIncrease: 1.18
-  upgradesBought: 0
+  infoText: The minimum distance a light travels before changing directions. One unit
+    equals the width of the light itself.
+  basePrice: 100
+  costIncrease: 1.21
+  upgradesBought: 13
   isMaxed: 0
   unlockAtLevel: 0

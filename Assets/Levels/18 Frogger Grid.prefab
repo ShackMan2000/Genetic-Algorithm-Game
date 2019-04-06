@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 2113883506989728446}
   - component: {fileID: 50785398305664236}
   - component: {fileID: 66989144638776790}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Walls
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4735726729896612}
   - component: {fileID: 2569400266032426968}
   m_Layer: 0
-  m_Name: 17 Frogger Grid
+  m_Name: 18 Frogger Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

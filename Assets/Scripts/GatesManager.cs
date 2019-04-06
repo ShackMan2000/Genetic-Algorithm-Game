@@ -107,24 +107,17 @@ public class GatesManager : MonoBehaviour
         for (int i = 0; i < gates.Length; i++)
         {
             gates[i].PrepareFirstRound();
-        }
-
-        if (newRoundStarts != null)
-            newRoundStarts();
+        }      
     }
 
+       
 
 
-
-    [ContextMenu("NewRound")]
     public void NewRound()
     {
         LevelManager.Instance.LockKillemAllBTN();
         StopCoroutine(LevelManager.Instance.UnlockKillEmAllButton(0));
         LevelManager.Instance.ChangeLightCount(-1, 0);
-
-
-        // EnemyManager.Instance.ActivateEnemies();
 
         for (int i = 0; i < gates.Length; i++)
         {
@@ -139,21 +132,23 @@ public class GatesManager : MonoBehaviour
         if (gatesReady == gates.Length)
         {
             gatesReady = 0;
-            LaunchAllGates();
+            StartCoroutine(LaunchAllGates());
         }
     }
 
 
-    private void LaunchAllGates()
+    private IEnumerator LaunchAllGates()
     {
-
-        if (newRoundStarts != null)
-            newRoundStarts();
 
 
         currentLifeSpan += lifeSpan.currentValue;
         lifeSpanCounter = currentLifeSpan;
         StartCoroutine(LevelManager.Instance.UnlockKillEmAllButton(currentLifeSpan));
+
+        if (newRoundStarts != null)
+            newRoundStarts();
+
+        yield return new WaitForFixedUpdate();
 
         for (int i = 0; i < gates.Length; i++)
         {

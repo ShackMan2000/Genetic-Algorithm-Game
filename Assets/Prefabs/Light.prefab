@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114658766117774072}
   - component: {fileID: 114404402318752438}
   - component: {fileID: 58181952475240982}
-  - component: {fileID: 50036733373789436}
+  - component: {fileID: 50000638791013184}
   m_Layer: 8
   m_Name: Light
   m_TagString: light
@@ -74,7 +74,7 @@ Transform:
   m_Father: {fileID: 4691845857158320}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50036733373789436
+--- !u!50 &50000638791013184
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -85,15 +85,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!58 &58181952475240982
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -121,14 +121,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedStat: {fileID: 11400000, guid: 9cc5b5c1a669578438371c5dfccca62d, type: 2}
-  minDistance: {fileID: 11400000, guid: 69b6d46f508a53a4bb236881fc03786f, type: 2}
-  maxDistance: {fileID: 11400000, guid: 6d6cdd3ffe5bdad42a0df0989fd5fa96, type: 2}
-  mutateSecond: {fileID: 11400000, guid: 24aaefebc4714224abf3c36361a71d50, type: 2}
-  mutateDirection: {fileID: 11400000, guid: a5f6901e9367a6a43aed6a045de03492, type: 2}
+  moveRange: {fileID: 11400000, guid: 69b6d46f508a53a4bb236881fc03786f, type: 2}
+  mutationRange: {fileID: 11400000, guid: a5f6901e9367a6a43aed6a045de03492, type: 2}
   incremental: {fileID: 11400000, guid: 962ef4f6570edca4ebc906f36ffa34da, type: 2}
-  pathSeconds: []
-  pathRotations: []
-  lockedSteps: 0
+  moving: 0
+  TESTLOCKPATH: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  path: []
   settings: {fileID: 11400000, guid: baf01d7d849b73f488be8512b687edc8, type: 2}
 --- !u!114 &114658766117774072
 MonoBehaviour:
@@ -145,10 +146,12 @@ MonoBehaviour:
   whiteCenter: {fileID: 212214042642369890}
   settings: {fileID: 11400000, guid: baf01d7d849b73f488be8512b687edc8, type: 2}
   dead: 1
+  reachedCheckpoint: 0
   movement: {fileID: 114404402318752438}
   distanceToGoal: 0
   myGate: {fileID: 0}
   isMerged: 0
+  hasBeenCloned: 0
 --- !u!212 &212093290781831168
 SpriteRenderer:
   m_ObjectHideFlags: 1

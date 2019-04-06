@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Lights
   m_EditorClassIdentifier: 
-  currentValue: 50
+  currentValue: 150
   minValue: 50
   maxValue: 50
   initialValue: 50
@@ -23,6 +23,6 @@ MonoBehaviour:
   infoText: lights mak mak
   basePrice: 500
   costIncrease: 1.3
-  upgradesBought: 0
-  isMaxed: 0
+  upgradesBought: 20
+  isMaxed: 1
   unlockAtLevel: 5

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
-  m_Name: Mutate Direction
+  m_Name: Mutation Range
   m_EditorClassIdentifier: 
-  currentValue: 20
-  minValue: 20
-  maxValue: 21
-  initialValue: 21
+  currentValue: 0.2
+  minValue: 1
+  maxValue: 5
+  initialValue: 5
   valueCap: 1
   upgradeStep: -1
   unitSymbol: '%'
@@ -24,6 +24,6 @@ MonoBehaviour:
     turning turn will be mutated by this %.
   basePrice: 200
   costIncrease: 1.18
-  upgradesBought: 0
-  isMaxed: 0
+  upgradesBought: 3
+  isMaxed: 1
   unlockAtLevel: 0
