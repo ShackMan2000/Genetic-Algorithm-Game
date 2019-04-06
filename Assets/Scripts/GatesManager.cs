@@ -190,7 +190,6 @@ public class GatesManager : MonoBehaviour
 
     public void AllLightsFromThisGateDead()
     {
-        //print("dead at : " + Time.time);
         bool allGatesReady = true;
 
         for (int i = 0; i < gates.Length; i++)

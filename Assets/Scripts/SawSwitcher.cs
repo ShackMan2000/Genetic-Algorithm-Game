@@ -27,8 +27,7 @@ public class SawSwitcher : MonoBehaviour
           //  collision.GetComponent<ElectricSaw>().NextStep();
             collision.gameObject.transform.position = startPoint;
 
-            //test
-            collision.gameObject.GetComponent<Saw>().PrintTime();
+
         }
     }
 }

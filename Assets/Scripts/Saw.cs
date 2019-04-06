@@ -45,11 +45,7 @@ public class Saw : MonoBehaviour
         GatesManager.newRoundStarts -= Restart;
     }
 
-    public void PrintTime()
-    {
-        if(TESTprint)
-            print(TESTtimeStamp - Time.time);
-    }
+
 
     private void Awake()
     {
@@ -133,11 +129,7 @@ public class Saw : MonoBehaviour
 
 
     public void Restart()
-    {
-        if(TESTprint)
-            TESTtimeStamp = Time.time;
-
-        StopAllCoroutines();
+    {      
         step = 0;
 
         if (hasOwnPath)

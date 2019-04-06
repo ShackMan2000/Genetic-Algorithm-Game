@@ -73,7 +73,7 @@ public class LightMovement : MonoBehaviour
         }
         else
         {
-            nextWayPoint = CreateReachableWayPoint(transform.position, 1.05f, transform.position);
+            nextWayPoint = CreateReachableWayPoint(transform.position, moveRange.currentValue * 0.25f, transform.position);
             path.Add(nextWayPoint);
         }
     }
@@ -130,9 +130,9 @@ public class LightMovement : MonoBehaviour
 
         for (int i = 1; i < path.Count; i++)
         {         
-            // var incrementalAdjuster = incremental.currentValue + (100 - incremental.currentValue) * ((float)i / path.Count);
-            // incrementalAdjuster /= 100f;
-            Vector2 mutatedWaypoint = CreateReachableWayPoint(path[i], rangeInCircleUnits, path[i - 1]);
+            var incrementalAdjuster = incremental.currentValue + (100 - incremental.currentValue) * ((float)i / path.Count);
+            incrementalAdjuster /= 100f;
+            Vector2 mutatedWaypoint = CreateReachableWayPoint(path[i], rangeInCircleUnits * incrementalAdjuster, path[i - 1]);
             if (mutatedWaypoint != Vector2.zero)
             {
                 path[i] = mutatedWaypoint;

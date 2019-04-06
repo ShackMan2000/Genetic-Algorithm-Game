@@ -176,7 +176,6 @@ public class Gate : MonoBehaviour
 
         for (int i = 0; i < activeLights.Count; i++)
         {
-
             activeLights[i].movement.StartMoving();
         }
 
