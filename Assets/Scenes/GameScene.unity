@@ -35665,7 +35665,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: When this timer runs out, all lights are killed
+  m_Text: Life is short though, and will be over when this timer runs out.
 --- !u!222 &611272187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50342,7 +50342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.87499, y: 6}
+  m_AnchoredPosition: {x: -0.87499, y: -6}
   m_SizeDelta: {x: 379.55, y: 193.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953440197
@@ -50380,7 +50380,7 @@ MonoBehaviour:
   m_Text: 'Now the lights are ranked by how close they got to the check point, and
     if so, how close to the goal.
 
-    The best ones are going to clone themselves, the worst ones disappear forever.'
+    The best ones are going to clone, overwriting the worst ones.'
 --- !u!222 &953440198
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -75306,8 +75306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.44, y: -16}
-  m_SizeDelta: {x: 370.91, y: 225.49}
+  m_AnchoredPosition: {x: -5, y: -16}
+  m_SizeDelta: {x: 395.5, y: 229.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542416656
 MonoBehaviour:
@@ -75330,7 +75330,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 02ed367a72c00ad4f8d990a2fd0fd74d, type: 3}
-    m_FontSize: 20
+    m_FontSize: 19
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -75341,9 +75341,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'This time the lights will repeat their previous path in a slightly mutated
-    way. The timer runs a little longer, so once they finish their old path, they
-    will move randomly again.
+  m_Text: 'The lights that got cloned repeat their previous path. The ones that were
+    overwritten are going to mutate the path they received. The timer runs a little
+    longer: Once they finish their path they will move randomly again.
 
 '
 --- !u!222 &1542416657

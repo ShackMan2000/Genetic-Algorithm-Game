@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Move Range
   m_EditorClassIdentifier: 
-  currentValue: 6.3999996
-  minValue: 6.3999996
+  currentValue: 7.6
+  minValue: 7.6
   maxValue: 8
   initialValue: 8
   valueCap: 0.4
@@ -20,10 +20,13 @@ MonoBehaviour:
   unitSymbol: ' '
   showDecimal: 1
   hasRange: 1
-  infoText: The minimum distance a light travels before changing directions. One unit
-    equals the width of the light itself.
+  infoText: 'When the light moves randomly, it will choose a point within this range
+    based on where it is. Once it moved there, it will choose a new point within this
+    range.
+
+    1 Unit is equal to the width of the light.'
   basePrice: 100
   costIncrease: 1.24
-  upgradesBought: 3
+  upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 0

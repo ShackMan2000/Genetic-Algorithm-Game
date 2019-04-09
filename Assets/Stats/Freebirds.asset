@@ -20,8 +20,8 @@ MonoBehaviour:
   unitSymbol: '%'
   showDecimal: 0
   hasRange: 1
-  infoText: The chance that each light tries out a new path. Click the bird  button
-    in the bottom right to activate.
+  infoText: The chance that each light tries out a new path from the moment you click
+    the bird button (in the bottom right).
   basePrice: 600
   costIncrease: 1.2
   upgradesBought: 0

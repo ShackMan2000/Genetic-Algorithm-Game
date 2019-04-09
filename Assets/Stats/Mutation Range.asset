@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Mutation Range
   m_EditorClassIdentifier: 
-  currentValue: 3.1999998
-  minValue: 3.1999998
+  currentValue: 3.8
+  minValue: 3.8
   maxValue: 4
   initialValue: 4
   valueCap: 0.2
@@ -20,10 +20,12 @@ MonoBehaviour:
   unitSymbol: 
   showDecimal: 1
   hasRange: 1
-  infoText: When repeating it's path from the previous run, every distance before
-    turning turn will be mutated by this %.
+  infoText: 'When a light is a clone, it will mutate the path from it''s original.
+    Every waypoint the original took will be moved randomly within this range.
+
+    1 Unit is equal to the width of the light.'
   basePrice: 200
   costIncrease: 1.26
-  upgradesBought: 3
+  upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 0

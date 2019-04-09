@@ -20,9 +20,10 @@ MonoBehaviour:
   unitSymbol: '%'
   showDecimal: 0
   hasRange: 0
-  infoText: 'Increase the mutation for distance and direction step by step. If the
-    direction is set to 20% and incremental to 10%, the first direction change is
-    only 20% * 10% = 2 %. It increases so only the last direction change is 20%. '
+  infoText: 'Increase the mutation range step by step. If the mutation range is set
+    to 20% and incremental to 10%, the first part of the path is mutated by 20% *
+    10% = 2 %. It keeps increasing constantly until the last part of the path will
+    be mutated by 20%. '
   basePrice: 800
   costIncrease: 1.13
   upgradesBought: 0
