@@ -132,12 +132,12 @@ public class GatesManager : MonoBehaviour
         if (gatesReady == gates.Length)
         {
             gatesReady = 0;
-            StartCoroutine(LaunchAllGates());
+            LaunchAllGates();
         }
     }
 
 
-    private IEnumerator LaunchAllGates()
+    private void LaunchAllGates()
     {
 
 
@@ -148,7 +148,6 @@ public class GatesManager : MonoBehaviour
         if (newRoundStarts != null)
             newRoundStarts();
 
-        yield return new WaitForFixedUpdate();
 
         for (int i = 0; i < gates.Length; i++)
         {
@@ -183,7 +182,6 @@ public class GatesManager : MonoBehaviour
 
     public void KillEarly()
     {
-        currentLifeSpan -= lifeSpanCounter;
         KillRemainingLights();
     }
 

@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Lifespan
   m_EditorClassIdentifier: 
-  currentValue: 2.1
-  minValue: 1.9999999
-  maxValue: 2.1
-  initialValue: 2.1
+  currentValue: 1.6999999
+  minValue: 1.6999999
+  maxValue: 2
+  initialValue: 2
   valueCap: 0.1
   upgradeStep: -0.1
   unitSymbol: s
@@ -22,7 +22,7 @@ MonoBehaviour:
   hasRange: 1
   infoText: Each run the lifespan of the lights increases by this number.
   basePrice: 400
-  costIncrease: 1.1
-  upgradesBought: 0
+  costIncrease: 1.18
+  upgradesBought: 2
   isMaxed: 0
   unlockAtLevel: 1

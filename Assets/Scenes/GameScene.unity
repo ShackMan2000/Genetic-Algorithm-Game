@@ -4706,7 +4706,7 @@ Prefab:
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
@@ -4716,7 +4716,7 @@ Prefab:
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -382.5
+      value: -249.5
       objectReference: {fileID: 0}
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
@@ -6740,7 +6740,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 5.2
+      value: 3.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -12114,7 +12114,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 3.2
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -23592,7 +23592,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -27191,7 +27191,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 3.4
+      value: 1.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -37937,7 +37937,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 4.4
+      value: 2.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -38811,7 +38811,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 5.4
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
@@ -40896,7 +40896,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 4.6
+      value: 3.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -45011,7 +45011,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 5.6
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
@@ -47800,7 +47800,7 @@ Prefab:
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
@@ -47810,7 +47810,7 @@ Prefab:
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -249.5
+      value: -382.5
       objectReference: {fileID: 0}
     - target: {fileID: 224371574694320704, guid: 3e3df4bac226ced4494b9f2293581867,
         type: 2}
@@ -48266,7 +48266,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -50787,8 +50787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.44, y: -8.5}
-  m_SizeDelta: {x: 370.9, y: 149.4}
+  m_AnchoredPosition: {x: 2.665001, y: -12.837}
+  m_SizeDelta: {x: 217.31, y: 141.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959494819
 MonoBehaviour:
@@ -50822,8 +50822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "This button kills the lights instantly. \nThe future paths are deleted.Useful
-    \nwhen they get stuck."
+  m_Text: "This button kills the lights instantly. \n"
 --- !u!222 &959494820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54849,8 +54848,8 @@ RectTransform:
   m_LocalScale: {x: 0.99990004, y: 0.99990004, z: 0.9998999}
   m_Children:
   - {fileID: 1412463855}
-  - {fileID: 393895064}
   - {fileID: 797186932}
+  - {fileID: 393895064}
   - {fileID: 1686719022}
   - {fileID: 795577121}
   - {fileID: 790140980}
@@ -54859,8 +54858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -349.8887}
-  m_SizeDelta: {x: 0, y: 811.2}
+  m_AnchoredPosition: {x: 0, y: -210.91003}
+  m_SizeDelta: {x: 0, y: 533.23004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054705961
 CanvasRenderer:
@@ -56028,8 +56027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 371.7, y: -93.5}
-  m_SizeDelta: {x: 338.9, y: 167.2}
+  m_AnchoredPosition: {x: 374.83, y: -116.75}
+  m_SizeDelta: {x: 222.64, y: 120.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084363547
 MonoBehaviour:
@@ -65563,7 +65562,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 4.2
+      value: 2.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -67583,8 +67582,8 @@ RectTransform:
   m_Father: {fileID: 1571861221}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.66158926}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.55059206}
+  m_AnchorMax: {x: 1, y: 0.999991}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -70689,7 +70688,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 4
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}
@@ -71325,8 +71324,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1350887013}
   m_HandleRect: {fileID: 1350887012}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.33841076
+  m_Value: 0.99998367
+  m_Size: 0.44939893
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -90398,22 +90397,22 @@ Prefab:
     - target: {fileID: 224024839974358148, guid: f3f11caf7b76d0e44ba9f2dc63b92c53,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 132
+      value: 81.1
       objectReference: {fileID: 0}
     - target: {fileID: 224024839974358148, guid: f3f11caf7b76d0e44ba9f2dc63b92c53,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -49
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 224024839974358148, guid: f3f11caf7b76d0e44ba9f2dc63b92c53,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 59.5
+      value: 49.17
       objectReference: {fileID: 0}
     - target: {fileID: 224024839974358148, guid: f3f11caf7b76d0e44ba9f2dc63b92c53,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 57.4
+      value: 54.45
       objectReference: {fileID: 0}
     - target: {fileID: 224024839974358148, guid: f3f11caf7b76d0e44ba9f2dc63b92c53,
         type: 2}
@@ -96392,8 +96391,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -54}
-  m_SizeDelta: {x: 46.3, y: 79}
+  m_AnchoredPosition: {x: 0.6, y: -31.84}
+  m_SizeDelta: {x: 44.82, y: 73.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993391630
 MonoBehaviour:
@@ -99737,7 +99736,7 @@ Prefab:
     - target: {fileID: 114919830105019322, guid: c729884e701e5f94f8cc339c614fe81e,
         type: 2}
       propertyPath: checkpointsFreezeTime.Array.data[0]
-      value: 3.6
+      value: 2.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c729884e701e5f94f8cc339c614fe81e, type: 2}

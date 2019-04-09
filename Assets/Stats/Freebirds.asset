@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Freebirds
   m_EditorClassIdentifier: 
-  currentValue: 10
-  minValue: 10
-  maxValue: 15
+  currentValue: 90
+  minValue: 85
+  maxValue: 90
   initialValue: 90
   valueCap: 10
   upgradeStep: -5
@@ -23,7 +23,7 @@ MonoBehaviour:
   infoText: The chance that each light tries out a new path. Click the bird  button
     in the bottom right to activate.
   basePrice: 600
-  costIncrease: 1.1
+  costIncrease: 1.2
   upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 8

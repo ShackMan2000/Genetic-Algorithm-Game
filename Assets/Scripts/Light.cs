@@ -21,7 +21,7 @@ public class Light : MonoBehaviour
     private Vector2 gatePosition;
 
     public LightMovement movement;
-    
+
     public float distanceToGoal;
 
     private Vector2 startPosition = Vector2.zero;
@@ -40,20 +40,18 @@ public class Light : MonoBehaviour
 
     private Color centerColor;
 
-    public bool hasBeenCloned;
+    public bool lockPath;
 
-    public static int TESTINT;
 
     private void Awake()
     {
         spriteRender = GetComponent<SpriteRenderer>();
 
         mergedColor = settings.colors[GameManager.Instance.currentLevel.mergedColor];
-        
+
         goalPosition = GameManager.Instance.currentLevel.goalPosition;
 
-        gameObject.name = "light " + TESTINT.ToString();
-        TESTINT++;
+  
     }
 
 
@@ -77,13 +75,12 @@ public class Light : MonoBehaviour
 
     public void PrepareToLaunch()
     {
-        hasBeenCloned = false;
         isMerged = false;
         reachedCheckpoint = false;
         collided = false;
         dead = false;
 
-        whiteCenter.color = centerColor = new Color(1,1,1,0.5f);
+        whiteCenter.color = centerColor = new Color(1, 1, 1, 0.5f);
 
         gameObject.layer = myGate.gateId + 10;
 
@@ -101,7 +98,7 @@ public class Light : MonoBehaviour
     public void FreeBird()
     {
         ClearRemainingPath();
-        if(lerproutine != null)
+        if (lerproutine != null)
             StopCoroutine(lerproutine);
 
         lerproutine = StartCoroutine(Blink());
@@ -116,16 +113,16 @@ public class Light : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {    
+    {
         if (collision.CompareTag("knife"))
         {
-            Die();
+            Die(naturalDeath: false);
 
         }
-        else if ((collision.CompareTag("0") && myGateID == 0) 
+        else if ((collision.CompareTag("0") && myGateID == 0)
             || (collision.CompareTag("1") && myGateID == 1))
         {
-           
+
 
             if (!reachedCheckpoint)
             {
@@ -153,7 +150,7 @@ public class Light : MonoBehaviour
                     otherLight.MergeLights();
                 }
             }
-        }   
+        }
     }
 
 
@@ -167,21 +164,24 @@ public class Light : MonoBehaviour
         LevelManager.Instance.ChangeLightCount(2, 1);
 
     }
-    
 
 
-    public void Die()
+
+    public void Die(bool naturalDeath = true)
     {
-        if(dead)
+        if (dead)
             return;
 
         dead = true;
-        //only on violent death
-       // movement.ChopOffRestPath();
+
+        lockPath = false;
+
         movement.moving = false;
 
-        SetDistanceToGoal();
+        if (!naturalDeath)
+            movement.ChopOffRestPath();
 
+        SetDistanceToGoal();
 
         if (isMerged)
             LevelManager.Instance.ChangeLightCount(2, -1);
@@ -193,7 +193,7 @@ public class Light : MonoBehaviour
     }
 
 
-          
+
 
     public void SetDistanceToGoal()
     {
@@ -214,15 +214,15 @@ public class Light : MonoBehaviour
     {
         int blinkRounds = 0;
 
-        while(blinkRounds < 10)
+        while (blinkRounds < 10)
         {
             spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 0);
-            whiteCenter.color = new Color(1,1,1,0);
+            whiteCenter.color = new Color(1, 1, 1, 0);
             yield return new WaitForSeconds(0.05f);
             spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1);
             whiteCenter.color = centerColor;
             yield return new WaitForSeconds(0.05f);
-            blinkRounds ++;
+            blinkRounds++;
         }
         yield return null;
 

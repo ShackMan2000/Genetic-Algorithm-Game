@@ -14,13 +14,15 @@ public class Goal : MonoBehaviour
     [SerializeField]
     private GameObject lightDummy;
 
-    // Use this for initialization
+
+
     void Start()
     {
         gateAnimator = GetComponent<GateAnimator>();
 
         if (GameManager.Instance.currentLevel.gateColors.Length > 1)
-        { needsMergedLights = true;
+        {
+            needsMergedLights = true;
             gateAnimator.SetColor(settings.colors[GameManager.Instance.currentLevel.mergedColor]);
         }
         else
@@ -28,7 +30,7 @@ public class Goal : MonoBehaviour
     }
 
 
-    
+
 
     public IEnumerator LevelWonLaunchLights()
     {
@@ -36,14 +38,14 @@ public class Goal : MonoBehaviour
 
         while (grenadeCount >= 0)
         {
-            grenadeCount --;
+            grenadeCount--;
             for (int i = 0; i < 200; i++)
             {
                 GameObject launchingLight = Instantiate(lightDummy);
             }
             yield return new WaitForSeconds(2f);
         }
-    
+
     }
 
 
@@ -57,6 +59,8 @@ public class Goal : MonoBehaviour
 
         else if (enteredLight.isMerged)
             LightEnterdGoal(enteredLight);
+        else 
+            enteredLight.movement.BounceOffGoal();
     }
 
 

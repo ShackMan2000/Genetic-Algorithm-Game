@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Incremental
   m_EditorClassIdentifier: 
-  currentValue: 2
-  minValue: 52
-  maxValue: 52
-  initialValue: 52
-  valueCap: 2
-  upgradeStep: -2
+  currentValue: 100
+  minValue: 100
+  maxValue: 100
+  initialValue: 100
+  valueCap: 5
+  upgradeStep: -5
   unitSymbol: '%'
   showDecimal: 0
   hasRange: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
     direction is set to 20% and incremental to 10%, the first direction change is
     only 20% * 10% = 2 %. It increases so only the last direction change is 20%. '
   basePrice: 800
-  costIncrease: 1.06
-  upgradesBought: 98
+  costIncrease: 1.13
+  upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 12

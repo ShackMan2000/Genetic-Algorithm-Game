@@ -8,7 +8,7 @@ public class Gate : MonoBehaviour
 {
 
     [SerializeField]
-    private MutationStat maxLights, cloneRange, cloneChance, freebirdChance;
+    private MutationStat maxLights, cloneRange, cloneChance, freebirdChance, lockPath;
 
     public int gateId;
 
@@ -27,10 +27,6 @@ public class Gate : MonoBehaviour
     public bool allLightsDead;
 
     private Color color;
-
-    public bool TESTPrintMe;
-
-    public float stamp1,stamp2, stamp3;
 
 
     private void Awake()
@@ -68,19 +64,13 @@ public class Gate : MonoBehaviour
 
     public void PrepareNewRound()
     {
-     //  print("Preparing Gate " + gateId +" at " + Time.time);
-        stamp1 = Time.time;
 
         List<Light> sortedLights = deadLights.OrderBy(o => o.distanceToGoal).ToList();
         deadLights = new List<Light>(sortedLights);
 
-        ChooseLightsToClone();
+       // LockLightsFromCloning();
 
-        foreach (var light in deadLights)
-        {
-            light.SetColor(color);
-
-        }
+        ChooseLightsToClone();     
 
         activeLights.AddRange(deadLights);
         deadLights.Clear();
@@ -92,6 +82,18 @@ public class Gate : MonoBehaviour
 
         StartCoroutine(PrepareToLaunch());
     }
+
+
+    //private void LockLightsFromCloning()
+    //{
+    //    int lockedLights = Mathf.RoundToInt(deadLights.Count * lockPath.currentValue / 100f);
+
+    //    for (int i = 0; i < lockedLights; i++)
+    //    {        
+    //        deadLights[i].lockPath = true;         
+    //    }
+
+    //}
 
 
 
@@ -107,6 +109,7 @@ public class Gate : MonoBehaviour
 
             Light originalLight = deadLights[0];
             activeLights.Add(originalLight);
+            originalLight.lockPath = true;
 
             deadLights.RemoveAt(0);
 
@@ -118,8 +121,6 @@ public class Gate : MonoBehaviour
 
     private void CloneLight(Light originalLight)
     {
-        originalLight.hasBeenCloned = true;
-
         float thisCloneChance = cloneChance.currentValue;
 
         while (thisCloneChance > 0f && deadLights.Count > 0)
@@ -141,7 +142,7 @@ public class Gate : MonoBehaviour
     {
         foreach (var light in activeLights)
         {
-            if (!light.hasBeenCloned)
+            if (!light.lockPath)
                 light.movement.MutatePath();
         }
     }
@@ -153,15 +154,13 @@ public class Gate : MonoBehaviour
         for (int i = 0; i < activeLights.Count; i++)
         {
             Light launchingLight = activeLights[i];
+            launchingLight.SetColor(color);
 
             launchingLight.PrepareToLaunch();
         }
 
-
-
         gateAnimator.LaunchAnimation();
         yield return new WaitForSecondsRealtime(GameManager.Instance.settings.launchDelay);
-      
 
         GatesManager.Instance.GateReadyToLaunch();
     }
@@ -170,7 +169,6 @@ public class Gate : MonoBehaviour
 
     public void LaunchLights()
     {
-
         allLightsDead = false;
         LevelManager.Instance.ChangeLightCount(gateId, activeLights.Count);
 
@@ -179,8 +177,6 @@ public class Gate : MonoBehaviour
             activeLights[i].movement.StartMoving();
         }
 
-
-      
     }
 
 

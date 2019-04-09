@@ -11,19 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Move Range
   m_EditorClassIdentifier: 
-  currentValue: 1.7000009
-  minValue: 1.7000009
-  maxValue: 3.1
-  initialValue: 3.1
-  valueCap: 1
-  upgradeStep: -0.1
+  currentValue: 6.3999996
+  minValue: 6.3999996
+  maxValue: 8
+  initialValue: 8
+  valueCap: 0.4
+  upgradeStep: -0.4
   unitSymbol: ' '
   showDecimal: 1
   hasRange: 1
   infoText: The minimum distance a light travels before changing directions. One unit
     equals the width of the light itself.
   basePrice: 100
-  costIncrease: 1.21
-  upgradesBought: 13
+  costIncrease: 1.24
+  upgradesBought: 3
   isMaxed: 0
   unlockAtLevel: 0

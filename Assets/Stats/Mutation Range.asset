@@ -11,19 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Mutation Range
   m_EditorClassIdentifier: 
-  currentValue: 0.2
-  minValue: 1
-  maxValue: 5
-  initialValue: 5
-  valueCap: 1
-  upgradeStep: -1
-  unitSymbol: '%'
-  showDecimal: 0
+  currentValue: 3.1999998
+  minValue: 3.1999998
+  maxValue: 4
+  initialValue: 4
+  valueCap: 0.2
+  upgradeStep: -0.2
+  unitSymbol: 
+  showDecimal: 1
   hasRange: 1
   infoText: When repeating it's path from the previous run, every distance before
     turning turn will be mutated by this %.
   basePrice: 200
-  costIncrease: 1.18
+  costIncrease: 1.26
   upgradesBought: 3
-  isMaxed: 1
+  isMaxed: 0
   unlockAtLevel: 0

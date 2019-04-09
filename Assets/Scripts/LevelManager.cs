@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject[] canvi;
     [SerializeField]
-    private LevelWonOverlay levelWonOverlay;   
+    private LevelWonOverlay levelWonOverlay;
 
     [SerializeField]
     private GameSettings settings;
@@ -99,7 +99,7 @@ public class LevelManager : MonoBehaviour
 
         currentLevel = GameManager.Instance.currentLevel;
 
-        if(currentLevel.levelID == 0)
+        if (currentLevel.levelID == 0)
             killEarlyBTN.SetActive(false);
 
 
@@ -223,19 +223,15 @@ public class LevelManager : MonoBehaviour
             GameManager.Instance.SaveData.levelsUnlocked = currentLevel.levelID + 1;
         }
 
-
-
         levelWonOverlay.gameObject.SetActive(true);
 
         levelWonOverlay.ShowScore(timeElapsed, currentLevel);
         StartCoroutine(goal.LevelWonLaunchLights());
 
 
-      SaveManager.Instance.SaveGame();
+        SaveManager.Instance.SaveGame();
 
     }
-
-
 
 
 
@@ -248,22 +244,14 @@ public class LevelManager : MonoBehaviour
 
 
 
-
-
-
     public IEnumerator UnlockKillEmAllButton(float currentLifespan)
     {
-        if(currentLevel.levelID == 0)
+        if (currentLevel.levelID == 0)
             yield break;
-
 
         yield return new WaitForSeconds(lifeSpan.currentValue);
 
-        if ((currentLifespan - (2 * lifeSpan.currentValue) > 0.1f))
-            killEarlyBTN.SetActive(true);
-        yield return new WaitForSeconds(currentLifespan - (2 * lifeSpan.currentValue));
-        killEarlyBTN.SetActive(false);
-
+        killEarlyBTN.SetActive(true);
     }
 
 

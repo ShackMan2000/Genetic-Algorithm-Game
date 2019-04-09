@@ -11,19 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Clone Chance
   m_EditorClassIdentifier: 
-  currentValue: 200
-  minValue: 200
-  maxValue: 200
-  initialValue: 200
-  valueCap: 800
-  upgradeStep: 25
+  currentValue: 100
+  minValue: 100
+  maxValue: 100
+  initialValue: 100
+  valueCap: 1000
+  upgradeStep: 30
   unitSymbol: '%'
   showDecimal: 0
   hasRange: 0
   infoText: 
-  basePrice: 400
+  basePrice: 600
   costIncrease: 1.08
-  nextCost: 100
   upgradesBought: 0
   isMaxed: 0
   unlockAtLevel: 2

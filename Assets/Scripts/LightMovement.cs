@@ -32,7 +32,7 @@ public class LightMovement : MonoBehaviour
 
     void Awake()
     {
-        speed = speedStat.currentValue + 0.3f;
+        speed = speedStat.currentValue + 0.6f;
     }
 
 
@@ -76,6 +76,13 @@ public class LightMovement : MonoBehaviour
             nextWayPoint = CreateReachableWayPoint(transform.position, moveRange.currentValue * 0.25f, transform.position);
             path.Add(nextWayPoint);
         }
+    }
+
+
+    public void BounceOffGoal()
+    {
+        step -=2;
+        nextWayPoint = path[step -2];
     }
 
 

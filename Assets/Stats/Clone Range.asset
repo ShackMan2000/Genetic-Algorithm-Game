@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510b4432d5eb27c42b96c79b8e3378e6, type: 3}
   m_Name: Clone Range
   m_EditorClassIdentifier: 
-  currentValue: 8.068453
-  minValue: 2
-  maxValue: 32
-  initialValue: 32
-  valueCap: 10
+  currentValue: 36
+  minValue: 36
+  maxValue: 40
+  initialValue: 40
+  valueCap: 2
   upgradeStep: -2
   unitSymbol: '%'
   showDecimal: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
     100 means they can clone multiple times, e.g. 250% means they will clone twice
     with a 50% chance to clone three times.
   basePrice: 300
-  costIncrease: 1.22
-  upgradesBought: 14
+  costIncrease: 1.21
+  upgradesBought: 1
   isMaxed: 0
   unlockAtLevel: 0
