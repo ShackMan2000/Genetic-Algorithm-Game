@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4634363126269264}
   - component: {fileID: 2569400265490896678}
   m_Layer: 0
-  m_Name: 09 FireRoundTheGoal Grid
+  m_Name: 08 FireRoundTheGoal Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

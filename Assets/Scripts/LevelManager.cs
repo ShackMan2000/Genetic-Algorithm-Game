@@ -55,10 +55,7 @@ public class LevelManager : MonoBehaviour
             return instance;
         }
     }
-
-
-
-
+         
     public List<int> colorCounts;
 
     [SerializeField]
@@ -85,7 +82,6 @@ public class LevelManager : MonoBehaviour
             instance = this;
 
         colorCounts = new List<int> { 0, 0, 0 };
-
 
     }
 

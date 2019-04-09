@@ -11,9 +11,7 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> levels;
-
-    [SerializeField]
-    private int TESTLEVELID;
+  
 
     private static EnemyManager instance;
 
@@ -32,17 +30,12 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        //FOR TESTING
-        if (GameManager.Instance == null)
-            levels[TESTLEVELID].SetActive(true);
-        else
-            levels[GameManager.Instance.currentLevel.levelID].SetActive(true);
-
+        Instantiate(levels[GameManager.Instance.currentLevel.levelID]);
         GetSawsList();
-    }    
+    }
 
     public void GetSawsList()
     {
         saws = FindObjectsOfType<Saw>();
-    }       
+    }
 }
